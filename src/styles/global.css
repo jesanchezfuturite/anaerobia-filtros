@@ -51,7 +51,7 @@ html {
 }
 
 body {
-  @apply bg-navy text-white font-roboto antialiased overflow-x-hidden;
+  @apply bg-navy font-roboto antialiased overflow-x-hidden;
   line-height: 1.6;
   min-height: 100dvh;
 }
@@ -182,4 +182,16 @@ a {
 ::selection {
   background: var(--color-lime);
   color: var(--color-navy);
+}
+
+/* Espaciado de secciones forzado a 120px */
+.section-pad {
+  padding-top: 120px !important;
+  padding-bottom: 120px !important;
+}
+@media (min-width: 768px) {
+  .section-pad-hero {
+    padding-top: 150px !important;
+    padding-bottom: 150px !important;
+  }
 }

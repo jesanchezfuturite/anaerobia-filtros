@@ -33,11 +33,12 @@ import Layout from '../layouts/Layout.astro';
       aria-hidden="true"
     ></div>
 
-    <div class="container-aneffy w-full py-28 md:py-36">
-      <div class="max-w-4xl">
+    <div class="container-aneffy w-full section-pad section-pad-hero">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-12 lg:gap-16">
+        <div class="max-w-3xl">
 
         <!-- Badge -->
-        <div class="gsap-hero-item inline-flex items-center gap-3 mb-6">
+        <div class="gsap-hero-item inline-flex items-center gap-3" style="margin-bottom: 2rem;">
           <span class="w-8 h-px" style="background:#9ac31c;" aria-hidden="true"></span>
           <span
             class="font-roboto tracking-widest text-xs uppercase font-semibold"
@@ -58,15 +59,15 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Párrafo de apoyo -->
         <p
-          class="gsap-hero-item font-roboto font-light text-lg md:text-xl max-w-2xl mt-7 leading-relaxed"
-          style="color: rgba(255,255,255,0.68);"
+          class="gsap-hero-item font-roboto font-light text-lg md:text-xl max-w-2xl leading-relaxed"
+          style="color: rgba(255,255,255,0.68); margin-top: 2rem;"
         >
           Filtros industriales diseñados con 100% de compatibilidad OEM para tus cabinas.
           Calidad técnica de excelencia, sin aranceles ni tiempos de espera internacionales.
         </p>
 
         <!-- Botones CTA -->
-        <div class="gsap-hero-item flex flex-col sm:flex-row gap-4 mt-10">
+        <div class="gsap-hero-item flex flex-col sm:flex-row" style="gap: 1.5rem; margin-top: 3rem;">
           <a
             href="#cotizar"
             id="hero-cta-primary"
@@ -86,7 +87,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Métricas de confianza -->
-        <div class="gsap-hero-item flex flex-wrap gap-8 mt-14 pt-10 border-t" style="border-color: rgba(12,91,140,0.28);">
+        <div class="gsap-hero-item grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 xl:gap-6 border-t" style="border-color: rgba(12,91,140,0.28); margin-top: 4rem; padding-top: 3rem;">
           {[
             { value: '100%', label: 'Compatibilidad OEM' },
             { value: '48h',  label: 'Entrega Nacional' },
@@ -98,6 +99,25 @@ import Layout from '../layouts/Layout.astro';
               <span class="font-roboto text-xs tracking-wider uppercase" style="color:rgba(255,255,255,0.45);">{label}</span>
             </div>
           ))}
+        </div>
+
+        </div>
+
+        <!-- Columna derecha: Imagen Hero -->
+        <div class="gsap-hero-item hidden lg:flex justify-end relative h-full">
+          <div class="relative w-full max-w-full flex items-start" style="transform: scale(1.05); transform-origin: top right;">
+             <!-- Decoración Glow Intensificada pero sin líneas de cuadro (Aura redonda) -->
+             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 rounded-full opacity-60" style="background: radial-gradient(circle, #9ac31c 0%, #0c5b8c 80%, transparent 100%); filter: blur(80px);"></div>
+             
+             <!-- Imagen difuminada en los bordes para no parecer un cuadro -->
+             <img 
+               src="/hero1.webp" 
+               alt="Filtro Industrial ANEFFY" 
+               class="relative z-10 w-full h-auto" 
+               style="mask-image: radial-gradient(circle at center, black 60%, transparent 100%); -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);"
+               loading="eager"
+             />
+          </div>
         </div>
 
       </div>
@@ -116,11 +136,11 @@ import Layout from '../layouts/Layout.astro';
        ================================================ -->
   <section
     id="ventajas"
-    class="py-24 overflow-hidden"
+    class="section-pad overflow-hidden"
     style="background: linear-gradient(180deg, #001820 0%, #002535 100%);"
     aria-labelledby="ventajas-heading"
   >
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="container-aneffy">
 
       <!-- Encabezado de sección -->
       <div class="flex flex-col gap-3 max-w-2xl">
@@ -144,12 +164,12 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <!-- Bento Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16" style="grid-auto-rows: 280px;">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" style="grid-auto-rows: minmax(280px, auto); margin-top: 3rem;">
 
         <!-- Tarjeta 1 — Libre de Aranceles (2 cols) -->
         <article
-          class="gsap-bento-card md:col-span-2 relative rounded-2xl p-8 flex flex-col justify-end overflow-hidden group transition-colors duration-300 cursor-default"
-          style="background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.09);"
+          class="gsap-bento-card md:col-span-2 relative rounded-2xl flex flex-col justify-end overflow-hidden group transition-colors duration-300 cursor-default"
+          style="background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.09); padding: 1.5rem;"
         >
           <!-- Icono decorativo de fondo -->
           <div class="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity duration-300" aria-hidden="true">
@@ -168,8 +188,8 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Tarjeta 2 — Stock Inmediato (1 col) -->
         <article
-          class="gsap-bento-card rounded-2xl p-8 flex flex-col justify-end overflow-hidden group transition-colors duration-300 cursor-default relative"
-          style="background: rgba(154,195,28,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(154,195,28,0.20);"
+          class="gsap-bento-card rounded-2xl flex flex-col justify-end overflow-hidden group transition-colors duration-300 cursor-default relative"
+          style="background: rgba(154,195,28,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(154,195,28,0.20); padding: 1.5rem;"
         >
           <div class="absolute top-6 right-6 opacity-15 group-hover:opacity-25 transition-opacity duration-300" aria-hidden="true">
             <i class="ph ph-lightning" style="font-size: 6rem; color:#9ac31c;"></i>
@@ -186,8 +206,8 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Tarjeta 3 — Rendimiento OEM (3 cols, layout horizontal) -->
         <article
-          class="gsap-bento-card md:col-span-3 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 overflow-hidden group transition-colors duration-300 cursor-default relative"
-          style="background: rgba(12,91,140,0.15); backdrop-filter: blur(12px); border: 1px solid rgba(12,91,140,0.35);"
+          class="gsap-bento-card md:col-span-3 rounded-2xl flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 overflow-hidden group transition-colors duration-300 cursor-default relative"
+          style="background: rgba(12,91,140,0.15); backdrop-filter: blur(12px); border: 1px solid rgba(12,91,140,0.35); padding: 1.5rem;"
         >
           <!-- Orbe decorativo -->
           <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full blur-2xl opacity-20" style="background: #0c5b8c;" aria-hidden="true"></div>
@@ -205,19 +225,20 @@ import Layout from '../layouts/Layout.astro';
             </p>
           </div>
 
-          <!-- Lista de specs inline -->
-          <ul class="flex flex-wrap gap-4 shrink-0">
+          <!-- Lista de specs en Grid 2x2 rectangular con iconos -->
+          <ul class="grid grid-cols-2 gap-3 md:gap-5 shrink-0 w-full lg:w-[40%]">
             {[
-              'Tolerancia ±0.01mm',
-              'Presión: hasta 16 bar',
-              'ISO 9001:2015',
-              'Temp. -40°C a +120°C',
+              { text: 'Tolerancia ±0.01mm', icon: 'ph-crosshair' },
+              { text: 'Presión: hasta 16 bar', icon: 'ph-gauge' },
+              { text: 'ISO 9001:2015', icon: 'ph-certificate' },
+              { text: 'Temp. -40°C a +120°C', icon: 'ph-thermometer' },
             ].map((spec) => (
               <li
-                class="font-roboto text-xs tracking-wider uppercase px-4 py-2 rounded-sm border"
-                style="color:#9ac31c; border-color:rgba(154,195,28,0.30); background:rgba(154,195,28,0.07);"
+                class="font-roboto text-[10px] md:text-xs font-bold tracking-wider uppercase py-5 px-3 md:py-6 md:px-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+                style="color:#9ac31c; padding:10px; background:rgba(154,195,28,0.12);"
               >
-                {spec}
+                <i class={`ph ${spec.icon} text-2xl md:text-3xl mb-1 opacity-90`} aria-hidden="true"></i>
+                <span class="leading-tight">{spec.text}</span>
               </li>
             ))}
           </ul>
@@ -228,16 +249,217 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ================================================
+       SECCIÓN: INFORMACIÓN DEL FILTRO
+       ================================================ -->
+  <section
+    id="filtro-info"
+    class="section-pad overflow-hidden"
+    style="background: #001820;"
+    aria-labelledby="filtro-info-heading"
+  >
+    <div class="container-aneffy">
+      
+      <!-- Introducción -->
+      <div class="w-full flex flex-col items-center justify-center gsap-hero-item px-4 lg:px-0" style="margin-bottom: 6rem;">
+        <div class="flex flex-col items-center text-center gap-3" style="margin-bottom: 3rem;">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-px" style="background:#9ac31c;" aria-hidden="true"></span>
+            <span class="font-roboto text-xs tracking-[0.25em] uppercase font-semibold" style="color:#9ac31c;">Nuestros filtros</span>
+            <span class="w-8 h-px" style="background:#9ac31c;" aria-hidden="true"></span>
+          </div>
+          <h2 class="font-saira font-bold uppercase text-white" style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.1;">
+            EFICIENCIA ABSOLUTA A UN PRECIO INTELIGENTE
+          </h2>
+        </div>
+        <div class="max-w-4xl text-center">
+          <p class="font-roboto font-light text-lg md:text-xl leading-relaxed" style="color: rgba(255,255,255,0.85); text-align: center;">
+            En ANAEROBIA desarrollamos <span class="font-bold" style="color:#9ac31c;">ANEFFY</span>, un filtro de aire que combina eficiencia G3 y buen precio,<br class="hidden md:block" /> garantizando calidad, seguridad y ahorro en tu proceso de producción.
+          </p>
+        </div>
+      </div>
+
+      <!-- Layout 2 Columnas -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        <!-- Izquierda: Galería de Imágenes (Slider) -->
+        <div class="gsap-hero-item relative w-full flex justify-center lg:justify-start">
+          <div class="relative w-full max-w-[600px] overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-black/20 mx-auto lg:mx-0" style="aspect-ratio: 4/3;">
+            <div id="gallery-slider" class="flex w-full h-full transition-transform duration-700 ease-in-out">
+              <img src="/galeria/0D0A5108-2.png" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src="/galeria/0D0A5119-1.jpg" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src="/galeria/0D0A5147-1.png" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src="/galeria/0D0A5160-1.png" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src="/galeria/DSC00063.jpg"  alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src="/galeria/DSC00098-2.png" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src="/galeria/DSC00103-2.jpg" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src="/galeria/DSC00111-1.png" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+            </div>
+            
+            <!-- Controles Slider -->
+            <button id="prev-slide" class="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/40 hover:bg-[#9ac31c] flex items-center justify-center text-white backdrop-blur-sm transition-all shadow-lg border border-white/10" aria-label="Anterior">
+              <i class="ph ph-caret-left text-lg md:text-xl"></i>
+            </button>
+            <button id="next-slide" class="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/40 hover:bg-[#9ac31c] flex items-center justify-center text-white backdrop-blur-sm transition-all shadow-lg border border-white/10" aria-label="Siguiente">
+              <i class="ph ph-caret-right text-lg md:text-xl"></i>
+            </button>
+            
+            <!-- Puntos de Paginación -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" id="gallery-dots"></div>
+          </div>
+          
+          <script is:inline>
+            document.addEventListener('DOMContentLoaded', () => {
+              const slider = document.getElementById('gallery-slider');
+              const prev = document.getElementById('prev-slide');
+              const next = document.getElementById('next-slide');
+              const dotsContainer = document.getElementById('gallery-dots');
+              if(!slider || !prev || !next) return;
+
+              const slides = slider.querySelectorAll('img');
+              const totalSlides = slides.length;
+              let currentSlide = 0;
+
+              for(let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-[#9ac31c]' : 'bg-white/50 hover:bg-white/80'}`;
+                dot.ariaLabel = `Ir a diapositiva ${i + 1}`;
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+              }
+              const dots = dotsContainer.querySelectorAll('button');
+
+              const updateSlider = () => {
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                dots.forEach((dot, index) => {
+                  dot.className = `w-2 h-2 rounded-full transition-colors ${index === currentSlide ? 'bg-[#9ac31c]' : 'bg-white/50 hover:bg-white/80'}`;
+                });
+              };
+
+              const goToSlide = (index) => {
+                currentSlide = index;
+                updateSlider();
+              };
+
+              const nextSlide = () => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+              };
+
+              const prevSlide = () => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+              };
+
+              next.addEventListener('click', nextSlide);
+              prev.addEventListener('click', prevSlide);
+
+              // Auto-play
+              let interval = setInterval(nextSlide, 3500);
+              slider.parentElement.addEventListener('mouseenter', () => clearInterval(interval));
+              slider.parentElement.addEventListener('mouseleave', () => {
+                interval = setInterval(nextSlide, 3500);
+              });
+            });
+          </script>
+        </div>
+
+        <!-- Derecha: Texto / Beneficios -->
+        <div class="gsap-hero-item flex flex-col gap-10">
+          
+          <div class="flex flex-col lg:items-start text-left" style="margin-bottom: 1rem;">
+            <div class="w-12 h-1 rounded-full" style="background:#9ac31c; margin-bottom: 1rem;" aria-hidden="true"></div>
+            <h3 class="font-saira font-bold uppercase text-2xl md:text-3xl text-white tracking-wide" style="margin-bottom: 1rem;">
+              Eleva la Calidad de tus Productos
+            </h3>
+            <p class="font-roboto font-light text-base leading-relaxed" style="color:rgba(255,255,255,0.7);">
+              Elimina partículas, polvo, overspray y otros contaminantes del proceso de producción.
+            </p>
+          </div>
+
+          <div class="flex flex-col lg:items-start text-left" style="margin-bottom: 1rem;">
+            <div class="w-12 h-1 rounded-full" style="background:#9ac31c; margin-bottom: 1rem;" aria-hidden="true"></div>
+            <h3 class="font-saira font-bold uppercase text-2xl md:text-3xl text-white tracking-wide" style="margin-bottom: 1rem;">
+              Cumple con Normativas
+            </h3>
+            <p class="font-roboto font-light text-base leading-relaxed" style="color:rgba(255,255,255,0.7);">
+              Evita sanciones y garantiza un ambiente seguro de trabajo cumpliendo con regulaciones de emisión de partículas y contaminación.
+            </p>
+          </div>
+
+          <div class="flex flex-col lg:items-start text-left">
+            <div class="w-12 h-1 rounded-full" style="background:#9ac31c; margin-bottom: 1rem;" aria-hidden="true"></div>
+            <h3 class="font-saira font-bold uppercase text-2xl md:text-3xl text-white tracking-wide" style="margin-bottom: 1rem;">
+              Blindaje Logístico
+            </h3>
+            <p class="font-roboto font-light text-base leading-relaxed" style="color:rgba(255,255,255,0.7);">
+              Nos aseguramos de que tu suministro de filtros nunca falle en cuanto a tiempos de entrega.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================================================
+           TABLA DE CARACTERÍSTICAS
+           ================================================ -->
+      <div class="gsap-hero-item" style="margin-top: 8rem;">
+        <h2 class="font-saira font-bold text-3xl md:text-4xl text-center text-white tracking-wide uppercase" style="margin-bottom: 3rem;">
+          Características
+        </h2>
+
+        <div class="overflow-x-auto rounded-xl shadow-[0_0_30px_rgba(12,91,140,0.15)]" style="border: 1px solid rgba(255,255,255,0.1);">
+          <table class="w-full text-center border-collapse" style="min-width: 800px; background: rgba(0,0,0,0.2);">
+            <tbody>
+              <!-- Fila 1: Títulos Superiores -->
+              <tr style="background: rgba(12,91,140,0.35); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">
+                  Avg. arrestance<br/><span class="text-xs font-normal opacity-70">(acc.EN779)</span>
+                </th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Air Velocity</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Initial Pressure Drop</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider">Final Pressure Drop</th>
+              </tr>
+              <!-- Fila 2: Datos Superiores -->
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">85%</td>
+                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">1.5m/s</td>
+                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">20pa</td>
+                <td class="p-5 font-roboto font-bold text-2xl" style="color: #9ac31c;">200pa</td>
+              </tr>
+              <!-- Fila 3: Títulos Inferiores -->
+              <tr style="background: rgba(12,91,140,0.35); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Temp. Resistance,<br/>const</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Moisture<br/>Resistance</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Flame Resistance</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider">Dust holding at<br/>tested final</th>
+              </tr>
+              <!-- Fila 4: Datos Inferiores -->
+              <tr>
+                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">G3</td>
+                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">Up to 120 C</td>
+                <td class="p-5 font-roboto font-bold text-xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">S4 DIN5510/<br/>DIN54837</td>
+                <td class="p-5 font-roboto font-bold text-2xl" style="color: #9ac31c;">500g/m2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================
        SECCIÓN: CÓMO FUNCIONA (3 pasos)
        ================================================ -->
   <section
     id="especificaciones"
-    class="py-24"
+    class="section-pad"
     style="background: #001e2e;"
     aria-labelledby="proceso-heading"
   >
     <div class="container-aneffy">
-      <div class="flex flex-col items-center text-center gap-3 mb-16">
+      <div class="flex flex-col items-center text-center gap-3" style="margin-bottom: 3rem;">
         <div class="flex items-center gap-3">
           <span class="w-8 h-px" style="background:#9ac31c;" aria-hidden="true"></span>
           <span class="font-roboto text-xs tracking-[0.25em] uppercase font-semibold" style="color:#9ac31c;">Proceso Simple</span>
@@ -269,7 +491,7 @@ import Layout from '../layouts/Layout.astro';
             desc: 'Envío desde nuestros almacenes nacionales. Sin cruces aduanales, sin esperas. Tu filtro en planta en 24-48 horas.',
           },
         ].map(({ step, icon, title, desc }) => (
-          <div class="gsap-bento-card flex flex-col gap-5 p-8 rounded-2xl relative overflow-hidden" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08);">
+          <div class="gsap-bento-card flex flex-col gap-5 rounded-2xl relative overflow-hidden" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); padding: 1.5rem;">
             <span class="font-saira font-bold text-7xl absolute top-4 right-6 leading-none select-none" style="color:rgba(154,195,28,0.08);">{step}</span>
             <div class="w-12 h-12 rounded-md flex items-center justify-center" style="background:rgba(154,195,28,0.12);">
               <i class={`ph ${icon} text-2xl`} style="color:#9ac31c;" aria-hidden="true"></i>
@@ -288,8 +510,8 @@ import Layout from '../layouts/Layout.astro';
        ================================================ -->
   <section
     id="cotizar"
-    class="py-28 relative overflow-hidden"
-    style="background: linear-gradient(135deg, #003141 0%, #0c5b8c 100%);"
+    class="section-pad relative overflow-hidden"
+    style="background: linear-gradient(135deg, rgba(0, 49, 65, 0.85) 0%, rgba(12, 91, 140, 0.85) 100%), url('/bg_contacto.png'); background-size: cover; background-position: center;"
     aria-labelledby="cta-heading"
   >
     <!-- Grid decorativo -->
@@ -311,16 +533,118 @@ import Layout from '../layouts/Layout.astro';
       <p class="font-roboto font-light text-lg max-w-xl leading-relaxed" style="color:rgba(255,255,255,0.72);">
         Habla con un especialista en filtración industrial. Respuesta garantizada en menos de 2 horas hábiles.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 mt-4">
-        <a href="mailto:ventas@anaerobia.com" class="btn-primary text-lg px-10 py-4">
-          <i class="ph ph-envelope-simple text-xl" aria-hidden="true"></i>
-          Enviar Cotización
-        </a>
-        <a href="https://wa.me/528000000000" target="_blank" rel="noopener noreferrer" class="btn-secondary text-lg px-10 py-4">
-          <i class="ph ph-whatsapp-logo text-xl" aria-hidden="true"></i>
-          WhatsApp Directo
-        </a>
-      </div>
+      <form id="contact-form" class="w-full max-w-2xl mx-auto mt-8 flex flex-col text-left bg-[#001820]/40 backdrop-blur-sm rounded-xl border border-white/10 shadow-2xl" style="gap: 2rem; padding: 2.5rem;" novalidate>
+        <div class="grid grid-cols-1 md:grid-cols-2" style="gap: 1.5rem;">
+          <div class="flex flex-col" style="gap: 0.5rem;">
+            <label for="nombre" class="text-white text-sm font-roboto tracking-wide">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" required class="rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#9ac31c] focus:bg-white/10 transition-all font-roboto" style="padding: 1rem 1.25rem;" placeholder="Ej. Juan Pérez">
+          </div>
+          <div class="flex flex-col" style="gap: 0.5rem;">
+            <label for="correo" class="text-white text-sm font-roboto tracking-wide">Correo electrónico *</label>
+            <input type="email" id="correo" name="correo" required class="rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#9ac31c] focus:bg-white/10 transition-all font-roboto" style="padding: 1rem 1.25rem;" placeholder="juan@empresa.com">
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2" style="gap: 1.5rem;">
+          <div class="flex flex-col" style="gap: 0.5rem;">
+            <label for="telefono" class="text-white text-sm font-roboto tracking-wide">Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono" required class="rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#9ac31c] focus:bg-white/10 transition-all font-roboto" style="padding: 1rem 1.25rem;" placeholder="Ej. 55 1234 5678">
+          </div>
+          <div class="flex flex-col" style="gap: 0.5rem;">
+            <label for="empresa" class="text-white text-sm font-roboto tracking-wide">Empresa *</label>
+            <input type="text" id="empresa" name="empresa" required class="rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#9ac31c] focus:bg-white/10 transition-all font-roboto" style="padding: 1rem 1.25rem;" placeholder="Nombre de tu empresa">
+          </div>
+        </div>
+        <div class="flex flex-col" style="gap: 0.5rem;">
+          <label for="mensaje" class="text-white text-sm font-roboto tracking-wide">Mensaje o requerimiento *</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required class="rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#9ac31c] focus:bg-white/10 transition-all font-roboto resize-y" style="padding: 1rem 1.25rem;" placeholder="Describe brevemente tus necesidades de filtración..."></textarea>
+        </div>
+        
+        <input type="hidden" name="origen" value="https://anaerobia.com/aneffy">
+        
+        <div class="flex flex-col items-center mt-2">
+          <button type="submit" id="submit-btn" class="btn-primary text-base px-10 py-4 w-full md:w-auto flex items-center justify-center gap-2 group">
+            <i class="ph ph-paper-plane-right text-xl group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+            <span>Enviar Mensaje</span>
+          </button>
+          <p id="form-status" class="text-center font-roboto text-sm mt-4 hidden"></p>
+        </div>
+      </form>
+
+      <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+          const form = document.getElementById('contact-form');
+          const submitBtn = document.getElementById('submit-btn');
+          const formStatus = document.getElementById('form-status');
+
+          if (form) {
+            form.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              
+              const formData = new FormData(form);
+              const data = Object.fromEntries(formData.entries());
+              
+              // Validación personalizada
+              let isValid = true;
+              let errorMessage = '';
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              const phoneRegex = /^[0-9\s\+\-\(\)]+$/; // Permite números y formato básico
+              const digitsOnly = data.telefono.replace(/\D/g, '');
+              
+              if (!data.nombre.trim()) { isValid = false; errorMessage = 'El nombre es obligatorio.'; }
+              else if (!data.correo.trim() || !emailRegex.test(data.correo)) { isValid = false; errorMessage = 'Ingresa un correo electrónico válido.'; }
+              else if (!data.telefono.trim() || !phoneRegex.test(data.telefono) || digitsOnly.length < 8) { isValid = false; errorMessage = 'Ingresa un teléfono válido (solo números, mín. 8 dígitos).'; }
+              else if (!data.empresa.trim()) { isValid = false; errorMessage = 'El nombre de la empresa es obligatorio.'; }
+              else if (!data.mensaje.trim()) { isValid = false; errorMessage = 'El mensaje no puede estar vacío.'; }
+
+              if (!isValid) {
+                formStatus.textContent = errorMessage;
+                formStatus.className = 'text-center font-roboto text-sm text-red-400 font-medium bg-red-400/10 rounded-md border border-red-400/30';
+                formStatus.style.padding = '1rem 1.5rem';
+                formStatus.style.marginTop = '1.5rem';
+                formStatus.classList.remove('hidden');
+                return;
+              }
+
+              // Estado de carga
+              const originalBtnHtml = submitBtn.innerHTML;
+              submitBtn.innerHTML = '<i class="ph ph-spinner-gap animate-spin text-xl"></i><span>Enviando...</span>';
+              submitBtn.disabled = true;
+              submitBtn.style.opacity = '0.7';
+              submitBtn.style.cursor = 'not-allowed';
+
+              try {
+                const response = await fetch('https://n8n.ongoing.mx/webhook/80c2332e-35dd-420a-a2d0-869bae808e11', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'aneffy': 'Huo0lpaw.'
+                  },
+                  body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                  // Redirigir a la página de gracias
+                  window.location.href = '/gracias';
+                } else {
+                  throw new Error('Error de red');
+                }
+              } catch (error) {
+                formStatus.textContent = 'Ocurrió un error al intentar enviar tu mensaje. Por favor, inténtalo más tarde.';
+                formStatus.className = 'text-center font-roboto text-sm text-red-400 font-medium bg-red-400/10 rounded-md border border-red-400/30';
+                formStatus.style.padding = '1rem 1.5rem';
+                formStatus.style.marginTop = '1.5rem';
+                formStatus.classList.remove('hidden');
+                
+                // Restaurar estado del botón solo si hubo error
+                submitBtn.innerHTML = originalBtnHtml;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                submitBtn.style.cursor = 'pointer';
+              }
+            });
+          }
+        });
+      </script>
     </div>
   </section>
 
@@ -331,12 +655,15 @@ import Layout from '../layouts/Layout.astro';
      ================================================ -->
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
+    let initialized = false;
     // Espera a que GSAP esté disponible
     function initAnimations() {
+      if (initialized) return;
       if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
         setTimeout(initAnimations, 100);
         return;
       }
+      initialized = true;
 
       gsap.registerPlugin(ScrollTrigger);
 

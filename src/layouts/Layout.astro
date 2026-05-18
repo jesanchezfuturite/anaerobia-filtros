@@ -42,7 +42,7 @@ const canonicalURL = Astro.url.href;
     <meta name="twitter:image"      content={ogImage} />
 
     <!-- === Favicon === -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- === Google Fonts: Saira Condensed + Roboto Condensed === -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -78,6 +78,7 @@ const canonicalURL = Astro.url.href;
   </head>
 
   <body>
+    <div class="text-white relative flex flex-col min-h-[100dvh]">
     <!-- ================================================
          NAVBAR — Glassmorphism Sticky
          ================================================ -->
@@ -90,96 +91,21 @@ const canonicalURL = Astro.url.href;
 
         <!-- Logotipo -->
         <a href="/" aria-label="ANEFFY — Inicio" class="flex items-center gap-3 group">
-          <!-- Ícono SVG inline como placeholder del logo -->
-          <div
-            class="flex items-center justify-center w-9 h-9 rounded-sm transition-transform duration-200 group-hover:scale-105"
-            style="background: #9ac31c;"
-            aria-hidden="true"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-5 h-5">
-              <!-- Ícono representativo de filtro industrial -->
-              <path d="M3 4h18v2.5L13 12v7l-2-1v-6L3 6.5V4z" fill="#003141"/>
-            </svg>
-          </div>
-          <div class="flex flex-col leading-none">
-            <span
-              class="font-saira font-semibold text-xl tracking-widest uppercase text-white"
-            >ANEFFY</span>
-            <span class="text-[10px] tracking-[0.18em] uppercase" style="color: #9ac31c;">
-              Filtros Industriales
-            </span>
-          </div>
+          <img src="/logo.png" alt="Logotipo ANEFFY" class="h-10 md:h-12 w-auto transition-transform duration-200 group-hover:scale-105" loading="eager" />
         </a>
-
-        <!-- Links de navegación (desktop) -->
-        <ul class="hidden md:flex items-center gap-8 text-sm font-roboto font-light tracking-wide">
-          <li>
-            <a
-              href="#soluciones"
-              class="text-white/70 hover:text-white transition-colors duration-200"
-            >Soluciones</a>
-          </li>
-          <li>
-            <a
-              href="#industrias"
-              class="text-white/70 hover:text-white transition-colors duration-200"
-            >Industrias</a>
-          </li>
-          <li>
-            <a
-              href="#nosotros"
-              class="text-white/70 hover:text-white transition-colors duration-200"
-            >Nosotros</a>
-          </li>
-          <li>
-            <a
-              href="#contacto"
-              class="text-white/70 hover:text-white transition-colors duration-200"
-            >Contacto</a>
-          </li>
-        </ul>
 
         <!-- CTA Principal -->
         <a
           href="#cotizar"
           id="navbar-cta"
-          class="btn-primary text-sm hidden sm:inline-flex"
+          class="btn-primary text-sm inline-flex"
         >
           <i class="ph ph-chat-circle-dots text-base" aria-hidden="true"></i>
           Cotizar Filtros
         </a>
-
-        <!-- Menú hamburguesa (mobile) -->
-        <button
-          id="mobile-menu-btn"
-          class="sm:hidden flex flex-col gap-1.5 p-2 rounded-md transition-colors hover:bg-white/10"
-          aria-label="Abrir menú"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300" id="ham-1"></span>
-          <span class="block w-6 h-0.5 bg-white transition-opacity duration-300"  id="ham-2"></span>
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300" id="ham-3"></span>
-        </button>
       </nav>
 
-      <!-- Menú mobile desplegable -->
-      <div
-        id="mobile-menu"
-        class="sm:hidden hidden flex-col gap-0 border-t"
-        style="background: rgba(0,36,48,0.96); border-color: rgba(12,91,140,0.25);"
-      >
-        <a href="#soluciones" class="px-6 py-4 text-white/80 hover:text-white hover:bg-white/5 transition-colors font-roboto text-sm tracking-wide border-b" style="border-color: rgba(12,91,140,0.15);">Soluciones</a>
-        <a href="#industrias" class="px-6 py-4 text-white/80 hover:text-white hover:bg-white/5 transition-colors font-roboto text-sm tracking-wide border-b" style="border-color: rgba(12,91,140,0.15);">Industrias</a>
-        <a href="#nosotros"   class="px-6 py-4 text-white/80 hover:text-white hover:bg-white/5 transition-colors font-roboto text-sm tracking-wide border-b" style="border-color: rgba(12,91,140,0.15);">Nosotros</a>
-        <a href="#contacto"   class="px-6 py-4 text-white/80 hover:text-white hover:bg-white/5 transition-colors font-roboto text-sm tracking-wide border-b" style="border-color: rgba(12,91,140,0.15);">Contacto</a>
-        <div class="px-6 py-4">
-          <a href="#cotizar" class="btn-primary w-full justify-center text-sm">
-            <i class="ph ph-chat-circle-dots text-base" aria-hidden="true"></i>
-            Cotizar Filtros
-          </a>
-        </div>
-      </div>
+
     </header>
 
     <!-- ================================================
@@ -194,122 +120,62 @@ const canonicalURL = Astro.url.href;
          ================================================ -->
     <footer
       class="w-full border-t"
-      style="background: #001e2e; border-color: rgba(12,91,140,0.25);"
+      style="background: #001e2e; border-color: rgba(12,91,140,0.25); padding-top: 60px; padding-bottom: 60px;"
     >
       <!-- Franja superior -->
-      <div class="container-aneffy py-10 grid grid-cols-1 md:grid-cols-3 gap-8 border-b" style="border-color: rgba(12,91,140,0.18);">
+      <div class="container-aneffy grid grid-cols-1 md:grid-cols-2 gap-8 border-b" style="border-color: rgba(12,91,140,0.18); padding-top: 3rem; padding-bottom: 1rem;">
 
         <!-- Columna: Marca -->
         <div class="flex flex-col gap-3">
-          <div class="flex items-center gap-2">
-            <div class="w-7 h-7 rounded-sm flex items-center justify-center" style="background:#9ac31c;" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-4 h-4">
-                <path d="M3 4h18v2.5L13 12v7l-2-1v-6L3 6.5V4z" fill="#003141"/>
-              </svg>
-            </div>
-            <span class="font-saira font-semibold text-lg tracking-widest uppercase text-white">ANEFFY</span>
+          <div class="flex items-center">
+            <img src="/logo.png" alt="Logotipo ANEFFY" class="h-8 md:h-10 w-auto" loading="lazy" />
           </div>
           <p class="text-xs font-roboto leading-relaxed" style="color:#8da8b8;">
             Soluciones de filtración industrial de alto rendimiento para los procesos más exigentes. Una marca de Anaerobia.
           </p>
         </div>
 
-        <!-- Columna: Navegación rápida -->
-        <div class="flex flex-col gap-3">
-          <h3 class="text-xs font-saira font-semibold tracking-[0.2em] uppercase" style="color:#9ac31c;">
-            Navegación
-          </h3>
-          <ul class="flex flex-col gap-1.5 text-sm font-roboto" style="color:#8da8b8;">
-            <li><a href="#soluciones" class="hover:text-white transition-colors">Soluciones</a></li>
-            <li><a href="#industrias" class="hover:text-white transition-colors">Industrias</a></li>
-            <li><a href="#nosotros"   class="hover:text-white transition-colors">Nosotros</a></li>
-            <li><a href="#contacto"   class="hover:text-white transition-colors">Contacto</a></li>
-          </ul>
-        </div>
-
         <!-- Columna: Contacto -->
-        <div class="flex flex-col gap-3">
-          <h3 class="text-xs font-saira font-semibold tracking-[0.2em] uppercase" style="color:#9ac31c;">
-            Contacto
-          </h3>
-          <ul class="flex flex-col gap-2 text-sm font-roboto" style="color:#8da8b8;">
-            <li class="flex items-center gap-2">
-              <i class="ph ph-envelope-simple text-base" style="color:#9ac31c;" aria-hidden="true"></i>
-              <a href="mailto:ventas@anaerobia.com" class="hover:text-white transition-colors">
-                ventas@anaerobia.com
-              </a>
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="ph ph-phone text-base" style="color:#9ac31c;" aria-hidden="true"></i>
-              <a href="tel:+528000000000" class="hover:text-white transition-colors">
-                +52 800 000 0000
-              </a>
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="ph ph-map-pin text-base" style="color:#9ac31c;" aria-hidden="true"></i>
-              <span>México · LATAM</span>
-            </li>
-          </ul>
+        <div class="flex justify-start md:justify-end">
+          <div class="flex flex-col gap-3">
+            <h3 class="text-xs font-saira font-semibold tracking-[0.2em] uppercase" style="color:#9ac31c;">
+              Contacto
+            </h3>
+            <ul class="flex flex-col gap-2 text-sm font-roboto" style="color:#8da8b8;">
+              <li class="flex items-center gap-2">
+                <i class="ph ph-envelope-simple text-base" style="color:#9ac31c;" aria-hidden="true"></i>
+                <a href="mailto:info@anaerobia.com" class="hover:text-white transition-colors">
+                  info@anaerobia.com
+                </a>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph ph-phone text-base" style="color:#9ac31c;" aria-hidden="true"></i>
+                <a href="tel:+522222839604" class="hover:text-white transition-colors">
+                  222 283 9604
+                </a>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ph ph-map-pin text-base" style="color:#9ac31c;" aria-hidden="true"></i>
+                <span>México · LATAM</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <!-- Franja inferior: Copyright -->
-      <div class="container-aneffy py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p class="text-xs font-roboto font-light" style="color:#8da8b8;">
+      <div class="container-aneffy flex items-center justify-center text-center" style="padding-top: 1rem; padding-bottom: 1rem;">
+        <p class="text-xs font-roboto font-light w-full" style="color:#8da8b8;">
           ANAEROBIA © 2026. Todos los derechos reservados.
         </p>
-        <div class="flex items-center gap-5 text-xs font-roboto" style="color:#8da8b8;">
-          <a href="/privacidad" class="hover:text-white transition-colors">Aviso de Privacidad</a>
-          <span aria-hidden="true" class="opacity-30">|</span>
-          <a href="/terminos"   class="hover:text-white transition-colors">Términos de Uso</a>
-          <span aria-hidden="true" class="opacity-30">|</span>
-          <a href="#cotizar"    class="hover:text-white transition-colors" style="color:#9ac31c;">Cotizar</a>
-        </div>
       </div>
     </footer>
-
+    </div>
     <!-- ================================================
          SCRIPTS DE INTERACTIVIDAD
          ================================================ -->
     <script is:inline>
-      // ── Menú mobile toggle ──
-      const btn  = document.getElementById('mobile-menu-btn');
-      const menu = document.getElementById('mobile-menu');
-      const ham1 = document.getElementById('ham-1');
-      const ham2 = document.getElementById('ham-2');
-      const ham3 = document.getElementById('ham-3');
 
-      if (btn && menu) {
-        btn.addEventListener('click', () => {
-          const isOpen = menu.classList.contains('flex');
-          menu.classList.toggle('hidden', isOpen);
-          menu.classList.toggle('flex', !isOpen);
-          btn.setAttribute('aria-expanded', String(!isOpen));
-
-          // Animación hamburguesa → X
-          if (!isOpen) {
-            ham1.style.transform = 'translateY(7px) rotate(45deg)';
-            ham2.style.opacity   = '0';
-            ham3.style.transform = 'translateY(-7px) rotate(-45deg)';
-          } else {
-            ham1.style.transform = '';
-            ham2.style.opacity   = '';
-            ham3.style.transform = '';
-          }
-        });
-
-        // Cerrar menú al hacer clic en un enlace
-        menu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            menu.classList.add('hidden');
-            menu.classList.remove('flex');
-            btn.setAttribute('aria-expanded', 'false');
-            ham1.style.transform = '';
-            ham2.style.opacity   = '';
-            ham3.style.transform = '';
-          });
-        });
-      }
 
       // ── Navbar scroll shadow ──
       const navbar = document.getElementById('navbar');
@@ -324,13 +190,35 @@ const canonicalURL = Astro.url.href;
       }
 
       // ── GSAP: animación de entrada navbar ──
-      document.addEventListener('gsap:ready', () => {
+      function initNavbar() {
+        if (window.navbarInitialized) return;
+        window.navbarInitialized = true;
         gsap.from('#navbar', {
           y: -80,
           opacity: 0,
           duration: 0.8,
           ease: 'power3.out',
         });
+      }
+
+      if (window.gsap && window.ScrollTrigger) {
+        initNavbar();
+      } else {
+        document.addEventListener('gsap:ready', initNavbar);
+      }
+    </script>
+
+    <!-- Chatbot Conversia -->
+    <script is:inline src="https://conversia.com.mx/assets/js/chatbot.js" id="chatbot-js"></script>
+    <script is:inline>
+      // Se espera a que cargue la ventana para inicializar de forma segura
+      window.addEventListener('load', function() {
+        if (typeof CHATKODEX !== 'undefined') {
+          CHATKODEX.init({
+            host: window.location.host,
+            key: 'IfcGlX07JF6cE'
+          });
+        }
       });
     </script>
   </body>

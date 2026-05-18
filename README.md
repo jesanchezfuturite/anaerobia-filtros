@@ -54,9 +54,10 @@ anaerobia-filtros/
 │   └── favicon.svg              # Favicon SVG con colores ANEFFY
 ├── src/
 │   ├── layouts/
-│   │   └── Layout.astro         # Layout base: Navbar + Footer + Scripts globales
+│   │   └── Layout.astro         # Layout base: Navbar + Footer + Scripts globales (Conversia)
 │   ├── pages/
-│   │   └── index.astro          # Página principal (landing completa)
+│   │   ├── index.astro          # Página principal (landing completa con slider)
+│   │   └── gracias.astro        # Página de agradecimiento post-conversión
 │   └── styles/
 │       └── global.css           # Sistema de diseño: tokens @theme + utilidades
 ├── .env.example                 # Template de variables de entorno (seguro para Git)
@@ -101,16 +102,11 @@ npm run dev
 
 ## Variables de Entorno
 
-Copia `.env.example` como `.env` (nunca subas `.env` al repositorio):
+El proyecto actualmente no requiere de variables de entorno complejas para el entorno local, ya que el formulario de contacto utiliza una integración *client-side* hacia un webhook de **n8n**.
+
+Si se utilizan integraciones adicionales a futuro, el archivo `.env.example` puede servir como referencia:
 
 ```env
-CONTACT_EMAIL_TO=ventas@anaerobia.com
-CONTACT_EMAIL_FROM=noreply@anaerobia.com
-SMTP_HOST=smtp-relay.brevo.com
-SMTP_PORT=587
-SMTP_USER=tu_usuario
-SMTP_PASS=tu_contraseña
-BREVO_API_KEY=xkeysib-...
 PUBLIC_SITE_URL=https://www.aneffy.com
 ```
 
@@ -147,7 +143,7 @@ El sitio genera **HTML estático** (`output: 'static'`) compatible con cualquier
 - **Vercel / Netlify**: Conecta el repositorio, build command `npm run build`, output dir `dist`
 - **VPS / Apache / Nginx**: Apunta el document root a `./dist/`
 
-> ⚠️ Si en el futuro se requiere el formulario de cotización con envío de email, el proyecto deberá migrar a `output: 'hybrid'` o `'server'` para habilitar endpoints API. Ver [`docs/ROADMAP.md`](./docs/ROADMAP.md).
+> 💡 **Nota sobre el Formulario:** El formulario de contacto de la landing page funciona perfectamente en entornos 100% estáticos (`output: 'static'`) ya que la petición se envía del lado del cliente hacia un webhook de n8n, el cual procesa los datos y envía las notificaciones, redireccionando después a `/gracias`. No se necesita un backend en Astro.
 
 ---
 
