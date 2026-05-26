@@ -63,7 +63,7 @@ import Layout from '../layouts/Layout.astro';
           style="color: rgba(255,255,255,0.68); margin-top: 2rem;"
         >
           Filtros industriales diseñados con 100% de compatibilidad OEM para tus cabinas.
-          Calidad técnica de excelencia, sin aranceles ni tiempos de espera internacionales.
+          Calidad técnica de excelencia.
         </p>
 
         <!-- Botones CTA -->
@@ -74,7 +74,7 @@ import Layout from '../layouts/Layout.astro';
             class="btn-primary text-lg px-8 py-4"
           >
             <i class="ph ph-package text-xl" aria-hidden="true"></i>
-            Cotizar Refacciones
+            Cotizar Filtro
           </a>
           <a
             href="#especificaciones"
@@ -86,20 +86,7 @@ import Layout from '../layouts/Layout.astro';
           </a>
         </div>
 
-        <!-- Métricas de confianza -->
-        <div class="gsap-hero-item grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 xl:gap-6 border-t" style="border-color: rgba(12,91,140,0.28); margin-top: 4rem; padding-top: 3rem;">
-          {[
-            { value: '100%', label: 'Compatibilidad OEM' },
-            { value: '48h',  label: 'Entrega Nacional' },
-            { value: '0%',   label: 'Aranceles de Importación' },
-            { value: '+12',  label: 'Años en el Mercado' },
-          ].map(({ value, label }) => (
-            <div class="flex flex-col gap-1">
-              <span class="font-saira font-bold text-3xl md:text-4xl" style="color:#9ac31c;">{value}</span>
-              <span class="font-roboto text-xs tracking-wider uppercase" style="color:rgba(255,255,255,0.45);">{label}</span>
-            </div>
-          ))}
-        </div>
+
 
         </div>
 
@@ -179,10 +166,10 @@ import Layout from '../layouts/Layout.astro';
           <!-- Acento lime superior -->
           <div class="w-12 h-1 rounded-full mb-5" style="background:#9ac31c;" aria-hidden="true"></div>
           <h3 class="font-saira font-bold text-2xl md:text-3xl uppercase text-white leading-tight">
-            Libre de Aranceles
+            Cumplimiento normativo
           </h3>
           <p class="font-roboto font-light text-sm md:text-base mt-3 leading-relaxed" style="color:rgba(255,255,255,0.60); max-width: 420px;">
-            Producción directa que elimina barreras de importación y sobrecostos, maximizando la rentabilidad de tu planta.
+            Mejora la calidad del aire dentro de tu cabina de pintura para optimizar procesos de producción, cumplir con normativas y dotas de seguridad al personal operativo.
           </p>
         </article>
 
@@ -204,45 +191,69 @@ import Layout from '../layouts/Layout.astro';
           </p>
         </article>
 
-        <!-- Tarjeta 3 — Rendimiento OEM (3 cols, layout horizontal) -->
-        <article
-          class="gsap-bento-card md:col-span-3 rounded-2xl flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 overflow-hidden group transition-colors duration-300 cursor-default relative"
-          style="background: rgba(12,91,140,0.15); backdrop-filter: blur(12px); border: 1px solid rgba(12,91,140,0.35); padding: 1.5rem;"
-        >
-          <!-- Orbe decorativo -->
-          <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full blur-2xl opacity-20" style="background: #0c5b8c;" aria-hidden="true"></div>
-          <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(12,91,140,0.08);" aria-hidden="true"></div>
+        <!-- Contenedor dividido en 2 columnas para Rendimiento y Asesoramiento -->
+        <div class="md:col-span-3 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          
+          <!-- Tarjeta 3 — Rendimiento OEM -->
+          <article
+            class="gsap-bento-card rounded-2xl flex flex-col justify-between gap-6 overflow-hidden group transition-colors duration-300 cursor-default relative"
+            style="background: rgba(12,91,140,0.15); backdrop-filter: blur(12px); border: 1px solid rgba(12,91,140,0.35); padding: 1.5rem;"
+          >
+            <!-- Orbe decorativo -->
+            <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full blur-2xl opacity-20" style="background: #0c5b8c;" aria-hidden="true"></div>
+            <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(12,91,140,0.08);" aria-hidden="true"></div>
 
-          <div class="flex flex-col gap-4 max-w-2xl">
-            <div class="w-12 h-1 rounded-full" style="background:#9ac31c;" aria-hidden="true"></div>
-            <h3 class="font-saira font-bold text-3xl md:text-4xl uppercase text-white leading-tight">
-              Rendimiento OEM<br />
-              <span style="color:#9ac31c;">Garantizado</span>
+            <div class="flex flex-col max-w-full">
+              <div class="w-12 h-1 rounded-full mb-5" style="background:#9ac31c;" aria-hidden="true"></div>
+              <h3 class="font-saira font-bold text-3xl md:text-4xl uppercase text-white leading-tight">
+                Rendimiento OEM<br />
+                <span style="color:#9ac31c;">Garantizado</span>
+              </h3>
+              <p class="font-roboto font-light text-base mt-3 leading-relaxed" style="color:rgba(255,255,255,0.65);">
+                Diseñados bajo las mismas especificaciones de fábrica de los equipos Anaerobia.
+                Ajuste perfecto, filtración impecable.
+              </p>
+            </div>
+
+            <!-- Lista de specs en Grid 2x2 con iconos a la izquierda -->
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 shrink-0 w-full mt-auto">
+              {[
+                { text: 'Tolerancia ±0.01mm', icon: 'ph-crosshair' },
+                { text: 'Presión: hasta 16 bar', icon: 'ph-gauge' },
+                { text: 'ISO 9001:2015', icon: 'ph-certificate' },
+                { text: 'Temp. -40°C a +120°C', icon: 'ph-thermometer' },
+              ].map((spec) => (
+                <li
+                  class="font-roboto text-[10px] md:text-xs font-bold tracking-wider uppercase rounded-xl flex flex-row items-center justify-start text-left gap-3 shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+                  style="color:#9ac31c; padding: 0.75rem 1rem; background:rgba(154,195,28,0.12);"
+                >
+                  <i class={`ph ${spec.icon} text-xl md:text-2xl opacity-90 shrink-0`} aria-hidden="true"></i>
+                  <span class="leading-tight">{spec.text}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <!-- Tarjeta 4 — Asesoramiento técnico -->
+          <article
+            class="gsap-bento-card rounded-2xl flex flex-col justify-end overflow-hidden group transition-colors duration-300 cursor-default relative"
+            style="background: rgba(154,195,28,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(154,195,28,0.20); padding: 1.5rem;"
+          >
+            <div class="absolute top-6 right-6 opacity-15 group-hover:opacity-25 transition-opacity duration-300" aria-hidden="true">
+              <i class="ph ph-chats" style="font-size: 6rem; color:#9ac31c;"></i>
+            </div>
+            <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(154,195,28,0.05);" aria-hidden="true"></div>
+            
+            <div class="w-12 h-1 rounded-full mb-5" style="background:#9ac31c;" aria-hidden="true"></div>
+            <h3 class="font-saira font-bold text-2xl uppercase text-white leading-tight">
+              Asesoramiento técnico
             </h3>
-            <p class="font-roboto font-light text-base leading-relaxed" style="color:rgba(255,255,255,0.65);">
-              Diseñados bajo las mismas especificaciones de fábrica de los equipos Anaerobia.
-              Ajuste perfecto, filtración impecable.
+            <p class="font-roboto font-light text-sm md:text-base mt-3 leading-relaxed" style="color:rgba(255,255,255,0.65); max-width: 90%;">
+              Somos capaces de brindar asesoramiento técnico para ayudarte a identificar tus necesidades de filtración de acuerdo a tu área de trabajo y proceso de producción.
             </p>
-          </div>
+          </article>
 
-          <!-- Lista de specs en Grid 2x2 rectangular con iconos -->
-          <ul class="grid grid-cols-2 gap-3 md:gap-5 shrink-0 w-full lg:w-[40%]">
-            {[
-              { text: 'Tolerancia ±0.01mm', icon: 'ph-crosshair' },
-              { text: 'Presión: hasta 16 bar', icon: 'ph-gauge' },
-              { text: 'ISO 9001:2015', icon: 'ph-certificate' },
-              { text: 'Temp. -40°C a +120°C', icon: 'ph-thermometer' },
-            ].map((spec) => (
-              <li
-                class="font-roboto text-[10px] md:text-xs font-bold tracking-wider uppercase py-5 px-3 md:py-6 md:px-4 rounded-xl flex flex-col items-center justify-center text-center gap-2 shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
-                style="color:#9ac31c; padding:10px; background:rgba(154,195,28,0.12);"
-              >
-                <i class={`ph ${spec.icon} text-2xl md:text-3xl mb-1 opacity-90`} aria-hidden="true"></i>
-                <span class="leading-tight">{spec.text}</span>
-              </li>
-            ))}
-          </ul>
-        </article>
+        </div>
 
       </div>
     </div>
@@ -418,28 +429,32 @@ import Layout from '../layouts/Layout.astro';
                 </th>
                 <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Air Velocity</th>
                 <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Initial Pressure Drop</th>
-                <th class="p-5 font-saira font-bold text-white tracking-wider">Final Pressure Drop</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Final Pressure Drop</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider">Normal Thickness</th>
               </tr>
               <!-- Fila 2: Datos Superiores -->
               <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">85%</td>
+                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">85% (G3)</td>
                 <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">1.5m/s</td>
                 <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">20pa</td>
-                <td class="p-5 font-roboto font-bold text-2xl" style="color: #9ac31c;">200pa</td>
+                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">200pa</td>
+                <td class="p-5 font-roboto font-bold text-2xl" style="color: #9ac31c;">24 mm</td>
               </tr>
               <!-- Fila 3: Títulos Inferiores -->
               <tr style="background: rgba(12,91,140,0.35); border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Temp. Resistance,<br/>const</th>
-                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Moisture<br/>Resistance</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Ashrae</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Temp. Resistance<br/>Const.</th>
                 <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Flame Resistance</th>
-                <th class="p-5 font-saira font-bold text-white tracking-wider">Dust holding at<br/>tested final</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider border-r border-[rgba(255,255,255,0.1)]">Dust holding at<br/>tested final</th>
+                <th class="p-5 font-saira font-bold text-white tracking-wider">Size</th>
               </tr>
               <!-- Fila 4: Datos Inferiores -->
               <tr>
-                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">G3</td>
+                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">MERV 7</td>
                 <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">Up to 120 C</td>
                 <td class="p-5 font-roboto font-bold text-xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">S4 DIN5510/<br/>DIN54837</td>
-                <td class="p-5 font-roboto font-bold text-2xl" style="color: #9ac31c;">500g/m2</td>
+                <td class="p-5 font-roboto font-bold text-2xl border-r border-[rgba(255,255,255,0.1)]" style="color: #9ac31c;">500g/m2</td>
+                <td class="p-5 font-roboto font-bold text-2xl" style="color: #9ac31c;">45”x90’x1”</td>
               </tr>
             </tbody>
           </table>
@@ -475,20 +490,20 @@ import Layout from '../layouts/Layout.astro';
           {
             step: '01',
             icon: 'ph-magnifying-glass',
-            title: 'Identifica tu Filtro',
-            desc: 'Compártenos el número de parte, modelo de cabina o especificación técnica. Nuestro equipo lo localiza de inmediato.',
+            title: 'La medida y cantidad',
+            desc: 'Compártenos la medida y cantidad necesaria. Si requieres asesoría, no dudes en contactarnos.',
           },
           {
             step: '02',
             icon: 'ph-chat-circle-dots',
             title: 'Recibe tu Cotización',
-            desc: 'En menos de 2 horas hábiles recibes precio, disponibilidad y tiempo de entrega directamente en tu correo o WhatsApp.',
+            desc: 'Recibe tu cotización considerando precio, disponibilidad y tiempo de entrega directamente en tu correo o WhatsApp.',
           },
           {
             step: '03',
             icon: 'ph-truck',
             title: 'Entrega Express',
-            desc: 'Envío desde nuestros almacenes nacionales. Sin cruces aduanales, sin esperas. Tu filtro en planta en 24-48 horas.',
+            desc: 'Nuestro centro de distribución ubicado estratégicamente nos permite entregar nuestros productos de manera directa o mediante nuestra red de distribuidores.',
           },
         ].map(({ step, icon, title, desc }) => (
           <div class="gsap-bento-card flex flex-col gap-5 rounded-2xl relative overflow-hidden" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); padding: 1.5rem;">
@@ -531,7 +546,7 @@ import Layout from '../layouts/Layout.astro';
         <span style="color:#9ac31c;">Ahora Mismo?</span>
       </h2>
       <p class="font-roboto font-light text-lg max-w-xl leading-relaxed" style="color:rgba(255,255,255,0.72);">
-        Habla con un especialista en filtración industrial. Respuesta garantizada en menos de 2 horas hábiles.
+        Habla con un especialista en filtración industrial. Respuesta garantizada.
       </p>
       <form id="contact-form" class="w-full max-w-2xl mx-auto mt-8 flex flex-col text-left bg-[#001820]/40 backdrop-blur-sm rounded-xl border border-white/10 shadow-2xl" style="gap: 2rem; padding: 2.5rem;" novalidate>
         <div class="grid grid-cols-1 md:grid-cols-2" style="gap: 1.5rem;">
