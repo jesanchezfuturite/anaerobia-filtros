@@ -165,11 +165,11 @@ import Layout from '../layouts/Layout.astro';
           <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(255,255,255,0.04);" aria-hidden="true"></div>
           <!-- Acento lime superior -->
           <div class="w-12 h-1 rounded-full" style="background:#9ac31c; margin-bottom: 1rem;" aria-hidden="true"></div>
-          <h3 class="font-saira font-bold text-2xl md:text-3xl uppercase text-white leading-tight">
+          <h3 class="font-saira font-bold text-3xl uppercase text-white leading-tight">
             Cumplimiento normativo
           </h3>
-          <p class="font-roboto font-light text-sm md:text-base mt-3 leading-relaxed" style="color:rgba(255,255,255,0.60); max-width: 420px;">
-            Mejora la calidad del aire dentro de tu cabina de pintura para optimizar procesos de producción, cumplir con normativas y dotas de seguridad al personal operativo.
+          <p class="font-roboto font-light text-base mt-3 leading-relaxed" style="color:rgba(255,255,255,0.60); max-width: 420px;">
+            Mejora la calidad del aire dentro de tu cabina de pintura para optimizar procesos de producción, cumplir con normativas y dotar de seguridad al personal operativo.
           </p>
         </article>
 
@@ -183,10 +183,10 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(154,195,28,0.05);" aria-hidden="true"></div>
           <div class="w-12 h-1 rounded-full" style="background:#9ac31c; margin-bottom: 1rem;" aria-hidden="true"></div>
-          <h3 class="font-saira font-bold text-2xl uppercase text-white leading-tight">
+          <h3 class="font-saira font-bold text-3xl uppercase text-white leading-tight">
             Stock Inmediato
           </h3>
-          <p class="font-roboto font-light text-sm mt-3 leading-relaxed" style="color:rgba(255,255,255,0.60);">
+          <p class="font-roboto font-light text-base mt-3 leading-relaxed" style="color:rgba(255,255,255,0.60);">
             Disponibilidad nacional para envío rápido. Tu línea de producción nunca se detiene.
           </p>
         </article>
@@ -196,7 +196,7 @@ import Layout from '../layouts/Layout.astro';
           
           <!-- Tarjeta 3 — Rendimiento OEM -->
           <article
-            class="gsap-bento-card rounded-2xl flex flex-col justify-between gap-6 overflow-hidden group transition-colors duration-300 cursor-default relative"
+            class="gsap-bento-card rounded-2xl flex flex-col justify-end gap-6 overflow-hidden group transition-colors duration-300 cursor-default relative"
             style="background: rgba(12,91,140,0.15); backdrop-filter: blur(12px); border: 1px solid rgba(12,91,140,0.35); padding: 1.5rem;"
           >
             <!-- Orbe decorativo -->
@@ -205,9 +205,8 @@ import Layout from '../layouts/Layout.astro';
 
             <div class="flex flex-col max-w-full">
               <div class="w-12 h-1 rounded-full" style="background:#9ac31c; margin-bottom: 1rem;" aria-hidden="true"></div>
-              <h3 class="font-saira font-bold text-3xl md:text-4xl uppercase text-white leading-tight">
-                Rendimiento OEM<br />
-                <span style="color:#9ac31c;">Garantizado</span>
+              <h3 class="font-saira font-bold text-3xl uppercase text-white leading-tight">
+                Rendimiento OEM <span style="color:#9ac31c;">Garantizado</span>
               </h3>
               <p class="font-roboto font-light text-base mt-3 leading-relaxed" style="color:rgba(255,255,255,0.65);">
                 Diseñados bajo las mismas especificaciones de fábrica de los equipos Anaerobia.
@@ -215,23 +214,6 @@ import Layout from '../layouts/Layout.astro';
               </p>
             </div>
 
-            <!-- Lista de specs en Grid 2x2 con iconos a la izquierda -->
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 shrink-0 w-full mt-auto">
-              {[
-                { text: 'Tolerancia ±0.01mm', icon: 'ph-crosshair' },
-                { text: 'Presión: hasta 16 bar', icon: 'ph-gauge' },
-                { text: 'ISO 9001:2015', icon: 'ph-certificate' },
-                { text: 'Temp. -40°C a +120°C', icon: 'ph-thermometer' },
-              ].map((spec) => (
-                <li
-                  class="font-roboto text-[10px] md:text-xs font-bold tracking-wider uppercase rounded-xl flex flex-row items-center justify-start text-left gap-3 shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
-                  style="color:#9ac31c; padding: 0.75rem 1rem; background:rgba(154,195,28,0.12);"
-                >
-                  <i class={`ph ${spec.icon} text-xl md:text-2xl opacity-90 shrink-0`} aria-hidden="true"></i>
-                  <span class="leading-tight">{spec.text}</span>
-                </li>
-              ))}
-            </ul>
           </article>
 
           <!-- Tarjeta 4 — Asesoramiento técnico -->
@@ -245,10 +227,10 @@ import Layout from '../layouts/Layout.astro';
             <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="background: rgba(154,195,28,0.05);" aria-hidden="true"></div>
             
             <div class="w-12 h-1 rounded-full" style="background:#9ac31c; margin-bottom: 1rem;" aria-hidden="true"></div>
-            <h3 class="font-saira font-bold text-2xl uppercase text-white leading-tight">
+            <h3 class="font-saira font-bold text-3xl uppercase text-white leading-tight">
               Asesoramiento técnico
             </h3>
-            <p class="font-roboto font-light text-sm md:text-base mt-3 leading-relaxed" style="color:rgba(255,255,255,0.65); max-width: 90%;">
+            <p class="font-roboto font-light text-base mt-3 leading-relaxed" style="color:rgba(255,255,255,0.65); max-width: 90%;">
               Somos capaces de brindar asesoramiento técnico para ayudarte a identificar tus necesidades de filtración de acuerdo a tu área de trabajo y proceso de producción.
             </p>
           </article>
