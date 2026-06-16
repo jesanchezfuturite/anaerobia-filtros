@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <Layout title="ANEFFY | Filtros Industriales de Máxima Eficiencia">
@@ -98,7 +100,7 @@ import Layout from '../layouts/Layout.astro';
              
              <!-- Imagen difuminada en los bordes para no parecer un cuadro -->
              <img 
-               src="/hero1.webp" 
+               src={`${base}hero1.webp`} 
                alt="Filtro Industrial ANEFFY" 
                class="relative z-10 w-full h-auto" 
                style="mask-image: radial-gradient(circle at center, black 60%, transparent 100%); -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);"
@@ -278,14 +280,14 @@ import Layout from '../layouts/Layout.astro';
         <div class="gsap-hero-item relative w-full flex justify-center lg:justify-start">
           <div class="relative w-full max-w-[600px] overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-black/20 mx-auto lg:mx-0" style="aspect-ratio: 4/3;">
             <div id="gallery-slider" class="flex w-full h-full transition-transform duration-700 ease-in-out">
-              <img src="/galeria/0D0A5108-2.png" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
-              <img src="/galeria/0D0A5119-1.jpg" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
-              <img src="/galeria/0D0A5147-1.png" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
-              <img src="/galeria/0D0A5160-1.png" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
-              <img src="/galeria/DSC00063.jpg"  alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
-              <img src="/galeria/DSC00098-2.png" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
-              <img src="/galeria/DSC00103-2.jpg" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
-              <img src="/galeria/DSC00111-1.png" alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src={`${base}galeria/0D0A5108-2.png`} alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src={`${base}galeria/0D0A5119-1.jpg`} alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src={`${base}galeria/0D0A5147-1.png`} alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src={`${base}galeria/0D0A5160-1.png`} alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src={`${base}galeria/DSC00063.jpg`}  alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src={`${base}galeria/DSC00098-2.png`} alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src={`${base}galeria/DSC00103-2.jpg`} alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
+              <img src={`${base}galeria/DSC00111-1.png`} alt="Filtro ANEFFY" class="w-full h-full object-cover shrink-0" loading="lazy" />
             </div>
             
             <!-- Controles Slider -->
@@ -519,7 +521,7 @@ import Layout from '../layouts/Layout.astro';
   <section
     id="cotizar"
     class="section-pad relative overflow-hidden"
-    style="background: linear-gradient(135deg, rgba(0, 49, 65, 0.85) 0%, rgba(12, 91, 140, 0.85) 100%), url('/bg_contacto.png'); background-size: cover; background-position: center;"
+    style={`background: linear-gradient(135deg, rgba(0, 49, 65, 0.85) 0%, rgba(12, 91, 140, 0.85) 100%), url('${base}bg_contacto.png'); background-size: cover; background-position: center;`}
     aria-labelledby="cta-heading"
   >
     <!-- Grid decorativo -->
@@ -578,7 +580,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </form>
 
-      <script is:inline>
+      <script define:vars={{ baseUrl: base }} is:inline>
         document.addEventListener('DOMContentLoaded', () => {
           const form = document.getElementById('contact-form');
           const submitBtn = document.getElementById('submit-btn');
@@ -641,7 +643,7 @@ import Layout from '../layouts/Layout.astro';
 
                 if (response.ok) {
                   // Redirigir a la página de gracias
-                  window.location.href = '/gracias';
+                  window.location.href = baseUrl + 'gracias';
                 } else {
                   throw new Error('Error de red');
                 }
